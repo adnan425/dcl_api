@@ -9,5 +9,14 @@ module.exports = {
         middlewares: [],
       },
     },
+    {
+      method: 'GET',
+      path: '/teams',
+      handler: 'api.teamController',
+      config: {
+        policies: [],
+        middlewares: [],
+      },
+    },
   ],
 };

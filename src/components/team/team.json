@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_team_teams",
+  "info": {
+    "displayName": "Team"
+  },
+  "options": {},
+  "attributes": {
+    "Profile": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "Name": {
+      "type": "text",
+      "required": true
+    },
+    "Designation": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

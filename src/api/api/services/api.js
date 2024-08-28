@@ -25,4 +25,24 @@ module.exports = () => ({
             throw new Error(err.message);
         }
     },
+    teamService: async () => {
+        try {
+            let entries = await strapi.db.query("api::team.team").findMany({
+                where: {
+                    publishedAt: {
+                        $ne: null,
+                    },
+                },
+                populate: {
+                    Team_Members: {
+                        populate: true
+                    }
+                },
+            });
+            return entries || [];
+        } catch (err) {
+            throw new Error(err.message);
+        }
+    },
 });
+

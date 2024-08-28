@@ -12,5 +12,13 @@ module.exports = {
     } catch (err) {
       ctx.badRequest("Something went wrong.", { details: err.message });
     }
+  },
+  teamController: async (ctx) => {
+    try {
+      let data = await strapi.service("api::api.api").teamService();
+      ctx.body = data;
+    } catch (err) {
+      ctx.badRequest("Something went wrong.", { details: err.message });
+    }
   }
 };
