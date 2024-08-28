@@ -26,6 +26,14 @@ module.exports = {
         policies: [],
         middlewares: [],
       },
+    }, {
+      method: 'GET',
+      path: '/faqs',
+      handler: 'api.faqController',
+      config: {
+        policies: [],
+        middlewares: [],
+      },
     },
   ],
 };

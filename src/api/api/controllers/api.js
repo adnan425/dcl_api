@@ -29,4 +29,12 @@ module.exports = {
       ctx.badRequest("Something went wrong.", { details: err.message });
     }
   },
+  faqController: async (ctx) => {
+    try {
+      let data = await strapi.service("api::api.api").faqService();
+      ctx.body = data;
+    } catch (err) {
+      ctx.badRequest("Something went wrong.", { details: err.message });
+    }
+  },
 };

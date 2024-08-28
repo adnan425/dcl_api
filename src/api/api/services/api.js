@@ -63,5 +63,24 @@ module.exports = () => ({
             throw new Error(err.message);
         }
     },
+    faqService: async () => {
+        try {
+            let entries = await strapi.db.query("api::faq.faq").findMany({
+                where: {
+                    publishedAt: {
+                        $ne: null,
+                    },
+                },
+                populate: {
+                    Faq: {
+                        populate: true
+                    }
+                },
+            });
+            return entries || [];
+        } catch (err) {
+            throw new Error(err.message);
+        }
+    },
 });
 

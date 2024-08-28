@@ -25,6 +25,17 @@ export interface TeamTeam extends Schema.Component {
   };
 }
 
+export interface FaqFaq extends Schema.Component {
+  collectionName: 'components_faq_faqs';
+  info: {
+    displayName: 'Faq';
+  };
+  attributes: {
+    Heading: Attribute.Text;
+    Description: Attribute.Text;
+  };
+}
+
 export interface ServicesServiceItem extends Schema.Component {
   collectionName: 'components_services_service_items';
   info: {
@@ -43,6 +54,7 @@ declare module '@strapi/types' {
     export interface Components {
       'testimonial.testimonials': TestimonialTestimonials;
       'team.team': TeamTeam;
+      'faq.faq': FaqFaq;
       'services.service-item': ServicesServiceItem;
     }
   }
