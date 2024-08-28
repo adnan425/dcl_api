@@ -1,5 +1,18 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface TestimonialTestimonials extends Schema.Component {
+  collectionName: 'components_testimonial_testimonials';
+  info: {
+    displayName: 'Testimonials';
+  };
+  attributes: {
+    Profile: Attribute.Media<'images'>;
+    Name: Attribute.String & Attribute.Required;
+    Designation: Attribute.String & Attribute.Required;
+    Message: Attribute.Text & Attribute.Required;
+  };
+}
+
 export interface TeamTeam extends Schema.Component {
   collectionName: 'components_team_teams';
   info: {
@@ -12,16 +25,14 @@ export interface TeamTeam extends Schema.Component {
   };
 }
 
-export interface TestimonialTestimonials extends Schema.Component {
-  collectionName: 'components_testimonial_testimonials';
+export interface FaqFaq extends Schema.Component {
+  collectionName: 'components_faq_faqs';
   info: {
-    displayName: 'Testimonials';
+    displayName: 'Faq';
   };
   attributes: {
-    Profile: Attribute.Media<'images'>;
-    Name: Attribute.String & Attribute.Required;
-    Designation: Attribute.String & Attribute.Required;
-    Message: Attribute.Text & Attribute.Required;
+    Heading: Attribute.Text;
+    Description: Attribute.Text;
   };
 }
 
@@ -38,24 +49,13 @@ export interface ServicesServiceItem extends Schema.Component {
   };
 }
 
-export interface FaqFaq extends Schema.Component {
-  collectionName: 'components_faq_faqs';
-  info: {
-    displayName: 'Faq';
-  };
-  attributes: {
-    Heading: Attribute.Text;
-    Description: Attribute.Text;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'team.team': TeamTeam;
       'testimonial.testimonials': TestimonialTestimonials;
-      'services.service-item': ServicesServiceItem;
+      'team.team': TeamTeam;
       'faq.faq': FaqFaq;
+      'services.service-item': ServicesServiceItem;
     }
   }
 }

@@ -879,6 +879,11 @@ export interface ApiServiceService extends Schema.CollectionType {
     Description: Attribute.Text;
     Image: Attribute.Media<'images'>;
     Services_List: Attribute.Component<'services.service-item', true>;
+    single_service: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'api::single-service.single-service'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -890,6 +895,40 @@ export interface ApiServiceService extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSingleServiceSingleService extends Schema.CollectionType {
+  collectionName: 'single_services';
+  info: {
+    singularName: 'single-service';
+    pluralName: 'single-services';
+    displayName: 'Single-Service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    service: Attribute.Relation<
+      'api::single-service.single-service',
+      'oneToOne',
+      'api::service.service'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::single-service.single-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::single-service.single-service',
       'oneToOne',
       'admin::user'
     > &
@@ -971,6 +1010,7 @@ declare module '@strapi/types' {
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::faq.faq': ApiFaqFaq;
       'api::service.service': ApiServiceService;
+      'api::single-service.single-service': ApiSingleServiceSingleService;
       'api::team.team': ApiTeamTeam;
       'api::testimonials-list.testimonials-list': ApiTestimonialsListTestimonialsList;
     }

@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "single_services",
+  "info": {
+    "singularName": "single-service",
+    "pluralName": "single-services",
+    "displayName": "Single-Service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "service": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::service.service",
+      "inversedBy": "single_service"
+    }
+  }
+}
