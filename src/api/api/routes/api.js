@@ -18,5 +18,14 @@ module.exports = {
         middlewares: [],
       },
     },
+    {
+      method: 'GET',
+      path: '/testimonials',
+      handler: 'api.testimonialsController',
+      config: {
+        policies: [],
+        middlewares: [],
+      },
+    },
   ],
 };

@@ -44,5 +44,24 @@ module.exports = () => ({
             throw new Error(err.message);
         }
     },
+    testimonialsService: async () => {
+        try {
+            let entries = await strapi.db.query("api::testimonials-list.testimonials-list").findMany({
+                where: {
+                    publishedAt: {
+                        $ne: null,
+                    },
+                },
+                populate: {
+                    Testimonials_List: {
+                        populate: true
+                    }
+                },
+            });
+            return entries || [];
+        } catch (err) {
+            throw new Error(err.message);
+        }
+    },
 });
 
