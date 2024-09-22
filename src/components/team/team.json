@@ -1,17 +1,18 @@
 {
   "collectionName": "components_team_teams",
   "info": {
-    "displayName": "Team"
+    "displayName": "Team",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Profile": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "Name": {
       "type": "text",
@@ -20,6 +21,9 @@
     "Designation": {
       "type": "string",
       "required": true
+    },
+    "Description": {
+      "type": "text"
     }
   }
 }

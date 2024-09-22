@@ -29,11 +29,13 @@ export interface TeamTeam extends Schema.Component {
   collectionName: 'components_team_teams';
   info: {
     displayName: 'Team';
+    description: '';
   };
   attributes: {
     Profile: Attribute.Media<'images'> & Attribute.Required;
     Name: Attribute.Text & Attribute.Required;
     Designation: Attribute.String & Attribute.Required;
+    Description: Attribute.Text;
   };
 }
 
