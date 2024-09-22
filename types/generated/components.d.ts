@@ -50,6 +50,16 @@ export interface ServicesKeywords extends Schema.Component {
   };
 }
 
+export interface KeywordsKeywords extends Schema.Component {
+  collectionName: 'components_keywords_keywords';
+  info: {
+    displayName: 'Keywords';
+  };
+  attributes: {
+    Keyword: Attribute.String;
+  };
+}
+
 export interface FaqFaq extends Schema.Component {
   collectionName: 'components_faq_faqs';
   info: {
@@ -68,6 +78,7 @@ declare module '@strapi/types' {
       'team.team': TeamTeam;
       'services.service-item': ServicesServiceItem;
       'services.keywords': ServicesKeywords;
+      'keywords.keywords': KeywordsKeywords;
       'faq.faq': FaqFaq;
     }
   }

@@ -863,6 +863,39 @@ export interface ApiFaqFaq extends Schema.CollectionType {
   };
 }
 
+export interface ApiHeroSectionHeroSection extends Schema.CollectionType {
+  collectionName: 'hero_sections';
+  info: {
+    singularName: 'hero-section';
+    pluralName: 'hero-sections';
+    displayName: 'HeroSection';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Label: Attribute.String;
+    Keywords: Attribute.Component<'keywords.keywords', true>;
+    Heading: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hero-section.hero-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hero-section.hero-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Schema.CollectionType {
   collectionName: 'services';
   info: {
@@ -999,6 +1032,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::faq.faq': ApiFaqFaq;
+      'api::hero-section.hero-section': ApiHeroSectionHeroSection;
       'api::service.service': ApiServiceService;
       'api::single-service.single-service': ApiSingleServiceSingleService;
       'api::team.team': ApiTeamTeam;

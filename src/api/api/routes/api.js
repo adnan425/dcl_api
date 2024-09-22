@@ -1,35 +1,45 @@
 module.exports = {
   routes: [
     {
-      method: 'GET',
-      path: '/services',
-      handler: 'api.serviceController',
+      method: "GET",
+      path: "/hero",
+      handler: "api.heroSectionController",
       config: {
         policies: [],
         middlewares: [],
       },
     },
     {
-      method: 'GET',
-      path: '/teams',
-      handler: 'api.teamController',
+      method: "GET",
+      path: "/services",
+      handler: "api.serviceController",
       config: {
         policies: [],
         middlewares: [],
       },
     },
     {
-      method: 'GET',
-      path: '/testimonials',
-      handler: 'api.testimonialsController',
+      method: "GET",
+      path: "/teams",
+      handler: "api.teamController",
       config: {
         policies: [],
         middlewares: [],
       },
-    }, {
-      method: 'GET',
-      path: '/faqs',
-      handler: 'api.faqController',
+    },
+    {
+      method: "GET",
+      path: "/testimonials",
+      handler: "api.testimonialsController",
+      config: {
+        policies: [],
+        middlewares: [],
+      },
+    },
+    {
+      method: "GET",
+      path: "/faqs",
+      handler: "api.faqController",
       config: {
         policies: [],
         middlewares: [],

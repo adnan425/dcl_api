@@ -1,10 +1,18 @@
-'use strict';
+"use strict";
 
 /**
  * A set of functions called "actions" for `api`
  */
 
 module.exports = {
+  heroSectionController: async (ctx) => {
+    try {
+      let data = await strapi.service("api::api.api").heroSectionService();
+      ctx.body = data;
+    } catch (err) {
+      ctx.badRequest("Something went wrong.", { details: err.message });
+    }
+  },
   serviceController: async (ctx) => {
     try {
       let data = await strapi.service("api::api.api").servicesService();
