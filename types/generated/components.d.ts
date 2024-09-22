@@ -1,5 +1,17 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface WorkingProcessSteps extends Schema.Component {
+  collectionName: 'components_working_process_steps';
+  info: {
+    displayName: 'Steps';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Icon: Attribute.Media<'images'> & Attribute.Required;
+  };
+}
+
 export interface TestimonialTestimonials extends Schema.Component {
   collectionName: 'components_testimonial_testimonials';
   info: {
@@ -74,6 +86,7 @@ export interface FaqFaq extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'working-process.steps': WorkingProcessSteps;
       'testimonial.testimonials': TestimonialTestimonials;
       'team.team': TeamTeam;
       'services.service-item': ServicesServiceItem;

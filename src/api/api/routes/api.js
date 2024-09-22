@@ -11,6 +11,15 @@ module.exports = {
     },
     {
       method: "GET",
+      path: "/working-process",
+      handler: "api.workingStepsController",
+      config: {
+        policies: [],
+        middlewares: [],
+      },
+    },
+    {
+      method: "GET",
       path: "/services",
       handler: "api.serviceController",
       config: {

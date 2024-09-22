@@ -1012,6 +1012,38 @@ export interface ApiTestimonialsListTestimonialsList
   };
 }
 
+export interface ApiWorkingProcessWorkingProcess extends Schema.CollectionType {
+  collectionName: 'working_processes';
+  info: {
+    singularName: 'working-process';
+    pluralName: 'working-processes';
+    displayName: 'working-process';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Label: Attribute.String;
+    Heading: Attribute.Text;
+    Steps: Attribute.Component<'working-process.steps', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::working-process.working-process',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::working-process.working-process',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1037,6 +1069,7 @@ declare module '@strapi/types' {
       'api::single-service.single-service': ApiSingleServiceSingleService;
       'api::team.team': ApiTeamTeam;
       'api::testimonials-list.testimonials-list': ApiTestimonialsListTestimonialsList;
+      'api::working-process.working-process': ApiWorkingProcessWorkingProcess;
     }
   }
 }

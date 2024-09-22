@@ -27,6 +27,28 @@ module.exports = () => ({
       throw new Error(err.message);
     }
   },
+  workingStepsService: async () => {
+    try {
+      let entries = await strapi.db
+        .query("api::working-process.working-process")
+        .findMany({
+          where: {
+            publishedAt: {
+              $ne: null,
+            },
+          },
+          populate: {
+            //   Image: true,
+            Steps: {
+              populate: true,
+            },
+          },
+        });
+      return entries || [];
+    } catch (err) {
+      throw new Error(err.message);
+    }
+  },
   servicesService: async () => {
     try {
       let entries = await strapi.db.query("api::service.service").findMany({

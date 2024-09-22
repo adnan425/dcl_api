@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "working_processes",
+  "info": {
+    "singularName": "working-process",
+    "pluralName": "working-processes",
+    "displayName": "working-process"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Label": {
+      "type": "string"
+    },
+    "Heading": {
+      "type": "text"
+    },
+    "Steps": {
+      "displayName": "Steps",
+      "type": "component",
+      "repeatable": true,
+      "component": "working-process.steps"
+    }
+  }
+}
