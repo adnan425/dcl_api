@@ -877,7 +877,7 @@ export interface ApiHeroSectionHeroSection extends Schema.CollectionType {
   attributes: {
     Label: Attribute.String;
     Keywords: Attribute.Component<'keywords.keywords', true>;
-    Heading: Attribute.Blocks;
+    Heading: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

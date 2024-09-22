@@ -22,7 +22,7 @@
       "component": "keywords.keywords"
     },
     "Heading": {
-      "type": "blocks"
+      "type": "richtext"
     }
   }
 }
