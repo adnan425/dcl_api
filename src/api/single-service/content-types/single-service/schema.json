@@ -10,12 +10,5 @@
     "draftAndPublish": true
   },
   "pluginOptions": {},
-  "attributes": {
-    "service": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::service.service",
-      "inversedBy": "single_service"
-    }
-  }
+  "attributes": {}
 }

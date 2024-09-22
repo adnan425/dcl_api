@@ -869,6 +869,7 @@ export interface ApiServiceService extends Schema.CollectionType {
     singularName: 'service';
     pluralName: 'services';
     displayName: 'Services';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -877,13 +878,7 @@ export interface ApiServiceService extends Schema.CollectionType {
     Label: Attribute.String;
     Heading: Attribute.String;
     Description: Attribute.Text;
-    Image: Attribute.Media<'images'>;
     Services_List: Attribute.Component<'services.service-item', true>;
-    single_service: Attribute.Relation<
-      'api::service.service',
-      'oneToOne',
-      'api::single-service.single-service'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -913,11 +908,6 @@ export interface ApiSingleServiceSingleService extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    service: Attribute.Relation<
-      'api::single-service.single-service',
-      'oneToOne',
-      'api::service.service'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

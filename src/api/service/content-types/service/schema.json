@@ -4,7 +4,8 @@
   "info": {
     "singularName": "service",
     "pluralName": "services",
-    "displayName": "Services"
+    "displayName": "Services",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,23 +21,10 @@
     "Description": {
       "type": "text"
     },
-    "Image": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
-    },
     "Services_List": {
       "type": "component",
       "repeatable": true,
       "component": "services.service-item"
-    },
-    "single_service": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::single-service.single-service",
-      "mappedBy": "service"
     }
   }
 }

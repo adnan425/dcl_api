@@ -25,6 +25,31 @@ export interface TeamTeam extends Schema.Component {
   };
 }
 
+export interface ServicesServiceItem extends Schema.Component {
+  collectionName: 'components_services_service_items';
+  info: {
+    displayName: 'Service_Item';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.Required;
+    Description: Attribute.Text & Attribute.Required;
+    Images: Attribute.Media<'images', true>;
+    Keywords: Attribute.Component<'services.keywords', true>;
+  };
+}
+
+export interface ServicesKeywords extends Schema.Component {
+  collectionName: 'components_services_keywords';
+  info: {
+    displayName: 'Keywords';
+  };
+  attributes: {
+    keyword: Attribute.String;
+  };
+}
+
 export interface FaqFaq extends Schema.Component {
   collectionName: 'components_faq_faqs';
   info: {
@@ -36,26 +61,14 @@ export interface FaqFaq extends Schema.Component {
   };
 }
 
-export interface ServicesServiceItem extends Schema.Component {
-  collectionName: 'components_services_service_items';
-  info: {
-    displayName: 'Service_Item';
-    icon: 'apps';
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.Required;
-    Description: Attribute.Text & Attribute.Required;
-    Icon: Attribute.Media<'images'> & Attribute.Required;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'testimonial.testimonials': TestimonialTestimonials;
       'team.team': TeamTeam;
-      'faq.faq': FaqFaq;
       'services.service-item': ServicesServiceItem;
+      'services.keywords': ServicesKeywords;
+      'faq.faq': FaqFaq;
     }
   }
 }
