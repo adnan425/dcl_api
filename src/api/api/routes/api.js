@@ -54,5 +54,14 @@ module.exports = {
         middlewares: [],
       },
     },
+    {
+      method: "GET",
+      path: "/contact-us",
+      handler: "api.contactUsController",
+      config: {
+        policies: [],
+        middlewares: [],
+      },
+    },
   ],
 };

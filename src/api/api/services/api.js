@@ -39,6 +39,9 @@ module.exports = () => ({
           },
           populate: {
             //   Image: true,
+            Heading_Section: {
+              populate: true,
+            },
             Steps: {
               populate: true,
             },
@@ -59,6 +62,9 @@ module.exports = () => ({
         },
         populate: {
           Image: true,
+          Heading_Section: {
+            populate: true,
+          },
           Services_List: {
             populate: true,
           },
@@ -78,6 +84,9 @@ module.exports = () => ({
           },
         },
         populate: {
+          Heading_Section: {
+            populate: true,
+          },
           Team_Members: {
             populate: true,
           },
@@ -99,6 +108,9 @@ module.exports = () => ({
             },
           },
           populate: {
+            Heading_Section: {
+              populate: true,
+            },
             Testimonials_List: {
               populate: true,
             },
@@ -118,11 +130,38 @@ module.exports = () => ({
           },
         },
         populate: {
+          Heading_Section: {
+            populate: true,
+          },
           Faq: {
             populate: true,
           },
         },
       });
+      return entries || [];
+    } catch (err) {
+      throw new Error(err.message);
+    }
+  },
+  contactUsService: async () => {
+    try {
+      let entries = await strapi.db
+        .query("api::contact-us.contact-us")
+        .findMany({
+          where: {
+            publishedAt: {
+              $ne: null,
+            },
+          },
+          populate: {
+            Heading_Section: {
+              populate: true,
+            },
+            Social_Links: {
+              populate: true,
+            },
+          },
+        });
       return entries || [];
     } catch (err) {
       throw new Error(err.message);

@@ -85,6 +85,29 @@ export interface FaqFaq extends Schema.Component {
   };
 }
 
+export interface CommonSocialLinks extends Schema.Component {
+  collectionName: 'components_common_social_links';
+  info: {
+    displayName: 'Social_Links';
+  };
+  attributes: {
+    Link: Attribute.String;
+    Name: Attribute.String;
+  };
+}
+
+export interface CommonSectionHeading extends Schema.Component {
+  collectionName: 'components_common_section_headings';
+  info: {
+    displayName: 'SectionHeading';
+  };
+  attributes: {
+    Label: Attribute.String;
+    Heading: Attribute.RichText;
+    Description: Attribute.Text;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -95,6 +118,8 @@ declare module '@strapi/types' {
       'services.keywords': ServicesKeywords;
       'keywords.keywords': KeywordsKeywords;
       'faq.faq': FaqFaq;
+      'common.social-links': CommonSocialLinks;
+      'common.section-heading': CommonSectionHeading;
     }
   }
 }

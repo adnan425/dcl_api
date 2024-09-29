@@ -800,12 +800,12 @@ export interface ApiContactUsContactUs extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Heading: Attribute.Text;
-    Description: Attribute.Text;
     Email: Attribute.String;
     Address: Attribute.Text;
     Phone: Attribute.String;
     Button_Label: Attribute.String;
+    Heading_Section: Attribute.Component<'common.section-heading'>;
+    Social_Links: Attribute.Component<'common.social-links', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -908,10 +908,8 @@ export interface ApiServiceService extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Label: Attribute.String;
-    Heading: Attribute.String;
-    Description: Attribute.Text;
     Services_List: Attribute.Component<'services.service-item', true>;
+    Heading_Section: Attribute.Component<'common.section-heading'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -972,8 +970,7 @@ export interface ApiTeamTeam extends Schema.CollectionType {
   };
   attributes: {
     Team_Members: Attribute.Component<'team.team', true>;
-    Label: Attribute.String;
-    Heading: Attribute.Text;
+    Heading_Section: Attribute.Component<'common.section-heading'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -991,12 +988,14 @@ export interface ApiTestimonialsListTestimonialsList
     singularName: 'testimonials-list';
     pluralName: 'testimonials-lists';
     displayName: 'Testimonials_List';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Testimonials_List: Attribute.Component<'testimonial.testimonials', true>;
+    Heading_Section: Attribute.Component<'common.section-heading'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1021,14 +1020,14 @@ export interface ApiWorkingProcessWorkingProcess extends Schema.CollectionType {
     singularName: 'working-process';
     pluralName: 'working-processes';
     displayName: 'working-process';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Label: Attribute.String;
-    Heading: Attribute.Text;
     Steps: Attribute.Component<'working-process.steps', true>;
+    Heading_Section: Attribute.Component<'common.section-heading'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -12,19 +12,15 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Label": {
-      "type": "string"
-    },
-    "Heading": {
-      "type": "string"
-    },
-    "Description": {
-      "type": "text"
-    },
     "Services_List": {
       "type": "component",
       "repeatable": true,
       "component": "services.service-item"
+    },
+    "Heading_Section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.section-heading"
     }
   }
 }

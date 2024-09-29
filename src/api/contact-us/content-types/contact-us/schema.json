@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Heading": {
-      "type": "text"
-    },
-    "Description": {
-      "type": "text"
-    },
     "Email": {
       "type": "string"
     },
@@ -29,6 +23,17 @@
     },
     "Button_Label": {
       "type": "string"
+    },
+    "Heading_Section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.section-heading"
+    },
+    "Social_Links": {
+      "displayName": "Social_Links",
+      "type": "component",
+      "repeatable": true,
+      "component": "common.social-links"
     }
   }
 }

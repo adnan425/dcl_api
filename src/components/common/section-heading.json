@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_common_section_headings",
+  "info": {
+    "displayName": "SectionHeading"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string"
+    },
+    "Heading": {
+      "type": "richtext"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}
