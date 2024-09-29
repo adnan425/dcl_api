@@ -17,9 +17,9 @@ module.exports = () => ({
           },
           populate: {
             //   Image: true,
-            //   Services_List: {
-            // populate: true,
-            //   },
+            Keywords: {
+              populate: true,
+            },
           },
         });
       return entries || [];
