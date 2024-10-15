@@ -12,33 +12,6 @@ export interface WorkingProcessSteps extends Schema.Component {
   };
 }
 
-export interface TestimonialTestimonials extends Schema.Component {
-  collectionName: 'components_testimonial_testimonials';
-  info: {
-    displayName: 'Testimonials';
-  };
-  attributes: {
-    Profile: Attribute.Media<'images'>;
-    Name: Attribute.String & Attribute.Required;
-    Designation: Attribute.String & Attribute.Required;
-    Message: Attribute.Text & Attribute.Required;
-  };
-}
-
-export interface TeamTeam extends Schema.Component {
-  collectionName: 'components_team_teams';
-  info: {
-    displayName: 'Team';
-    description: '';
-  };
-  attributes: {
-    Profile: Attribute.Media<'images'> & Attribute.Required;
-    Name: Attribute.Text & Attribute.Required;
-    Designation: Attribute.String & Attribute.Required;
-    Description: Attribute.Text;
-  };
-}
-
 export interface ServicesServiceItem extends Schema.Component {
   collectionName: 'components_services_service_items';
   info: {
@@ -64,6 +37,30 @@ export interface ServicesKeywords extends Schema.Component {
   };
 }
 
+export interface FaqFaq extends Schema.Component {
+  collectionName: 'components_faq_faqs';
+  info: {
+    displayName: 'Faq';
+  };
+  attributes: {
+    Heading: Attribute.Text;
+    Description: Attribute.Text;
+  };
+}
+
+export interface TestimonialTestimonials extends Schema.Component {
+  collectionName: 'components_testimonial_testimonials';
+  info: {
+    displayName: 'Testimonials';
+  };
+  attributes: {
+    Profile: Attribute.Media<'images'>;
+    Name: Attribute.String & Attribute.Required;
+    Designation: Attribute.String & Attribute.Required;
+    Message: Attribute.Text & Attribute.Required;
+  };
+}
+
 export interface KeywordsKeywords extends Schema.Component {
   collectionName: 'components_keywords_keywords';
   info: {
@@ -74,13 +71,16 @@ export interface KeywordsKeywords extends Schema.Component {
   };
 }
 
-export interface FaqFaq extends Schema.Component {
-  collectionName: 'components_faq_faqs';
+export interface TeamTeam extends Schema.Component {
+  collectionName: 'components_team_teams';
   info: {
-    displayName: 'Faq';
+    displayName: 'Team';
+    description: '';
   };
   attributes: {
-    Heading: Attribute.Text;
+    Profile: Attribute.Media<'images'> & Attribute.Required;
+    Name: Attribute.Text & Attribute.Required;
+    Designation: Attribute.String & Attribute.Required;
     Description: Attribute.Text;
   };
 }
@@ -112,12 +112,12 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'working-process.steps': WorkingProcessSteps;
-      'testimonial.testimonials': TestimonialTestimonials;
-      'team.team': TeamTeam;
       'services.service-item': ServicesServiceItem;
       'services.keywords': ServicesKeywords;
-      'keywords.keywords': KeywordsKeywords;
       'faq.faq': FaqFaq;
+      'testimonial.testimonials': TestimonialTestimonials;
+      'keywords.keywords': KeywordsKeywords;
+      'team.team': TeamTeam;
       'common.social-links': CommonSocialLinks;
       'common.section-heading': CommonSectionHeading;
     }
