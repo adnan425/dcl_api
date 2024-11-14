@@ -27,7 +27,7 @@ switch (process.env.NODE_ENV.trim()) {
         // secretAccessKey = "";
         // region = " ";
         // Bucket = "strapi-files-upload";
-        origin = ['*'];
+        origin = ['http://localhost:3000', 'https://dcl-frontend-omega.vercel.app'];
         break;
     case "PROD":
         database = {
@@ -42,7 +42,7 @@ switch (process.env.NODE_ENV.trim()) {
         //  secretAccessKey = " ";
         //  region = " ";
         //  Bucket = " ";
-        origin = ['*'];
+        origin = ['http://localhost:3000', 'https://dcl-frontend-omega.vercel.app'];
         break;
     default:
         break;
