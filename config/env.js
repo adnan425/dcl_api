@@ -1,0 +1,60 @@
+let database = {
+    DATABASE_HOST: "127.0.0.1",
+    DATABASE_NAME: "Dev",
+    DATABASE_USERNAME: "postgres",
+    DATABASE_PASSWORD: "",
+    DATABASE_PORT: "",
+};
+
+let s3FilebaseUrl = "";
+let accessKeyId = " ";
+let secretAccessKey = "";
+let region = " ";
+let Bucket = "strapi-files-upload";
+let origin = ["*"];
+let serverPort = "1335";
+switch (process.env.NODE_ENV.trim()) {
+    case "DEV":
+        database = {
+            DATABASE_HOST: "dev-betainos-directory-pursip-a5b2.k.aivencloud.com",
+            DATABASE_NAME: "dcl-cms-dev",
+            DATABASE_USERNAME: "avnadmin",
+            DATABASE_PASSWORD: "AVNS_O83bVZwNDPmhCWh2okC",
+            DATABASE_PORT: "10496",
+        };
+        // s3FilebaseUrl = "";
+        // accessKeyId = " ";
+        // secretAccessKey = "";
+        // region = " ";
+        // Bucket = "strapi-files-upload";
+        origin = ['*'];
+        break;
+    case "PROD":
+        database = {
+            DATABASE_HOST: "dev-betainos-directory-pursip-a5b2.k.aivencloud.com",
+            DATABASE_NAME: "dcl-cms-dev",
+            DATABASE_USERNAME: "avnadmin",
+            DATABASE_PASSWORD: "AVNS_O83bVZwNDPmhCWh2okC",
+            DATABASE_PORT: "10496",
+        };
+        //  s3FilebaseUrl = " ";
+        //  accessKeyId = " ";
+        //  secretAccessKey = " ";
+        //  region = " ";
+        //  Bucket = " ";
+        origin = ['*'];
+        break;
+    default:
+        break;
+}
+
+module.exports.db = database;
+module.exports.s3 = {
+    s3FilebaseUrl,
+    accessKeyId,
+    secretAccessKey,
+    region,
+    Bucket,
+};
+module.exports.origin = origin;
+module.exports.port = serverPort;

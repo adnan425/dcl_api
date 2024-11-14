@@ -1,3 +1,5 @@
+const { origin } = require("./env");
+
 module.exports = [
   'strapi::logger',
   'strapi::errors',
@@ -27,7 +29,13 @@ module.exports = [
       },
     },
   },
-  'strapi::cors',
+  {
+    name: "strapi::cors",
+    config: {
+      headers: "*",
+      origin: origin,
+    },
+  },
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
