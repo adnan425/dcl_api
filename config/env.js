@@ -31,11 +31,11 @@ switch (process.env.NODE_ENV.trim()) {
         break;
     case "PROD":
         database = {
-            DATABASE_HOST: "dev-betainos-directory-pursip-a5b2.k.aivencloud.com",
-            DATABASE_NAME: "dcl-cms-dev",
-            DATABASE_USERNAME: "avnadmin",
-            DATABASE_PASSWORD: "AVNS_O83bVZwNDPmhCWh2okC",
-            DATABASE_PORT: "10496",
+            DATABASE_HOST: "127.0.0.200",
+            DATABASE_NAME: "digikvin_dream_code_labs_cms",
+            DATABASE_USERNAME: "digikvin_dcl_admin",
+            DATABASE_PASSWORD: "sGK,}@oOVweZ",
+            DATABASE_PORT: "5432",
         };
         //  s3FilebaseUrl = " ";
         //  accessKeyId = " ";
